@@ -51,9 +51,13 @@ class SecondaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase {
 			$key->method( 'getModule' )->willReturn( $moduleName );
 			return $key;
 		}, $enabledModules );
-		$oathUser = $this->createNoOpMock( OATHUser::class, [ 'getKeys', 'isTwoFactorAuthEnabled' ] );
+		$oathUser = $this->createNoOpMock(
+			OATHUser::class,
+			[ 'getKeys', 'isTwoFactorAuthEnabled', 'getKeysForModule' ]
+		);
 		$oathUser->method( 'getKeys' )->willReturn( $keys );
 		$oathUser->method( 'isTwoFactorAuthEnabled' )->willReturn( (bool)$enabledModules );
+		$oathUser->method( 'getKeysForModule' )->willReturn( [] );
 		$oathUserRepository = $this->createNoOpMock( OATHUserRepository::class, [ 'findByUser' ] );
 		$oathUserRepository->expects( $this->atLeastOnce() )->method( 'findByUser' )
 			->willReturnCallback( function () use ( $user, $oathUser ) {
@@ -76,7 +80,7 @@ class SecondaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase {
 			new NullLogger(),
 			$this->createNoOpMock( AuthManager::class, [ 'getAuthenticationSessionData' ] ),
 			$this->createNoOpMock( HookContainer::class ),
-			new HashConfig( [ 'OATHPrioritizedModules' => [] ] ),
+			new HashConfig(),
 			$this->createNoOpMock( UserNameUtils::class )
 		);
 		$response = $provider->beginSecondaryAuthentication( $user, [] );

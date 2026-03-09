@@ -6,6 +6,7 @@ use BadMethodCallException;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\OATHAuth\Auth\SecondaryAuthenticationProvider;
 use MediaWiki\Extension\OATHAuth\Auth\WebAuthnAuthenticationRequest;
 use MediaWiki\Extension\OATHAuth\HTMLField\NoJsInfoField;
 use MediaWiki\Extension\OATHAuth\Key\AuthKey;
@@ -98,9 +99,9 @@ class HookHandler implements
 			// Remove the empty option for not switching first
 			unset( $availableModules[''] );
 
-			// Reorder 2FA types according to OATHPrioritizedModules
+			// Reorder 2FA types according to SecondaryAuthenticationProvider Module Priority
 			$orderedModules = [];
-			foreach ( $this->config->get( 'OATHPrioritizedModules' ) as $moduleName ) {
+			foreach ( SecondaryAuthenticationProvider::MODULE_PRIORITY as $moduleName ) {
 				if ( isset( $availableModules[$moduleName] ) ) {
 					$orderedModules[$moduleName] = $availableModules[$moduleName];
 					unset( $availableModules[$moduleName] );

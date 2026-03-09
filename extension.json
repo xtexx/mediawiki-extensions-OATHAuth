@@ -166,10 +166,6 @@
 			"value": false,
 			"description": "A secret key value for encrypting OATH-related data which should be SODIUM_CRYPTO_SECRETBOX_KEYBYTES hexadecimal bytes (64 chars) in length. This variable is currently considered immutable. Do not publicly set this value."
 		},
-		"OATHPrioritizedModules": {
-			"value": [ "webauthn", "totp", "recoverycodes" ],
-			"description": "List of authentication methods in the order that they should be prioritized."
-		},
 		"OATHRecoveryCodesCount": {
 			"value": 10,
 			"description": "The default amount of recovery codes to generate for a given user. Should be less than OATHMaxRecoveryCodesCount."

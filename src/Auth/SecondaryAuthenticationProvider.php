@@ -12,6 +12,8 @@ use MediaWiki\MediaWikiServices;
 
 class SecondaryAuthenticationProvider extends AbstractSecondaryAuthenticationProvider {
 
+	public const MODULE_PRIORITY = [ 'webauthn', 'totp', 'recoverycodes' ];
+
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
 		return [];
@@ -121,7 +123,7 @@ class SecondaryAuthenticationProvider extends AbstractSecondaryAuthenticationPro
 		}
 
 		// Use the highest-priority module the user has
-		foreach ( $this->config->get( 'OATHPrioritizedModules' ) as $module ) {
+		foreach ( self::MODULE_PRIORITY as $module ) {
 			if ( $authUser->getKeysForModule( $module ) ) {
 				return $module;
 			}
