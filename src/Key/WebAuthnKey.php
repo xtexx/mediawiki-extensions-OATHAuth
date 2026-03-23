@@ -81,8 +81,6 @@ class WebAuthnKey extends AuthKey {
 
 	protected array $credentialTransports = [];
 
-	protected bool $supportsPasswordless = false;
-
 	/**
 	 * Create a new empty key instance.
 	 *
@@ -162,12 +160,7 @@ class WebAuthnKey extends AuthKey {
 		);
 	}
 
-	/** @inheritDoc */
-	public function supportsPasswordlessLogin(): bool {
-		return $this->supportsPasswordless;
-	}
-
-	public function setPasswordlessSupport( bool $supportsPasswordlessMode ) {
+	public function setPasswordlessSupport( bool $supportsPasswordlessMode ): void {
 		$this->supportsPasswordless = $supportsPasswordlessMode;
 	}
 
@@ -175,7 +168,7 @@ class WebAuthnKey extends AuthKey {
 	 * Sets friendly name
 	 * If value exists, it will be appended with a unique suffix
 	 */
-	private function setFriendlyName( string $name ) {
+	private function setFriendlyName( string $name ): void {
 		$this->friendlyName = trim( $name );
 		$this->checkFriendlyName();
 	}
@@ -192,7 +185,7 @@ class WebAuthnKey extends AuthKey {
 		return $this->signCounter;
 	}
 
-	public function setSignCounter( int $newCount ) {
+	public function setSignCounter( int $newCount ): void {
 		$this->signCounter = $newCount;
 	}
 
@@ -204,7 +197,6 @@ class WebAuthnKey extends AuthKey {
 		return $this->credentialTrustPath;
 	}
 
-	/** @inheritDoc */
 	public function verify( OATHUser $user, array $data ): bool {
 		if ( $this->mode !== static::MODE_AUTHENTICATE ) {
 			$this->logger->error( 'Authentication attempt by user {user} while not in authenticate mode', [

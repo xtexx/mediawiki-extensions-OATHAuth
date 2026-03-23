@@ -6,10 +6,14 @@ use JsonSerializable;
 use MediaWiki\Extension\OATHAuth\OATHUser;
 
 abstract class AuthKey implements JsonSerializable {
+
+	protected bool $supportsPasswordless = false;
+
 	public function __construct(
 		protected readonly ?int $id,
 		protected ?string $friendlyName,
-		protected readonly ?string $createdTimestamp ) {
+		protected readonly ?string $createdTimestamp,
+	) {
 	}
 
 	/**
@@ -33,7 +37,8 @@ abstract class AuthKey implements JsonSerializable {
 		return $this->friendlyName;
 	}
 
-	/** @return string|null the timestamp of this key in the oathauth_devices table, or null if this key was created
+	/**
+	 * @return string|null the timestamp of this key in the oathauth_devices table, or null if this key was created
 	 * before timestamp data was saved in the database
 	 */
 	public function getCreatedTimestamp(): ?string {
@@ -44,7 +49,7 @@ abstract class AuthKey implements JsonSerializable {
 	 * @return bool whether the auth key supports passwordless login or not
 	 */
 	public function supportsPasswordlessLogin(): bool {
-		return false;
+		return $this->supportsPasswordless;
 	}
 
 	abstract public function verify( OATHUser $user, array $data ): bool;
