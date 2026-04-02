@@ -342,8 +342,12 @@ class WebAuthnKey extends AuthKey {
 			);
 
 			$response = $publicKeyCredential->response;
-
 			if ( !$response instanceof AuthenticatorAssertionResponse ) {
+				return false;
+			}
+
+			$pubKeySource = $this->findOneByCredentialId( $user, $publicKeyCredential->rawId );
+			if ( $pubKeySource === null ) {
 				return false;
 			}
 
@@ -360,12 +364,6 @@ class WebAuthnKey extends AuthKey {
 			$stepManagerFactory = new CeremonyStepManagerFactory();
 			$stepManagerFactory->setExtensionOutputCheckerHandler( new ExtensionOutputCheckerHandler() );
 			$stepManagerFactory->setAlgorithmManager( $coseAlgorithmManager );
-
-			$pubKeySource = $this->findOneByCredentialId( $user, $publicKeyCredential->rawId );
-
-			if ( $pubKeySource === null ) {
-				return false;
-			}
 
 			$authenticatorAssertionResponseValidator = new AuthenticatorAssertionResponseValidator(
 				ceremonyStepManager: $stepManagerFactory->requestCeremony(),
