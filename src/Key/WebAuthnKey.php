@@ -255,7 +255,7 @@ class WebAuthnKey extends AuthKey {
 		$original = $this->friendlyName;
 		$inc = 2;
 		while ( in_array( strtolower( $this->friendlyName ), $friendlyNames ) ) {
-			$this->friendlyName .= "$original #$inc";
+			$this->friendlyName = "$original #$inc";
 			$inc++;
 		}
 	}
