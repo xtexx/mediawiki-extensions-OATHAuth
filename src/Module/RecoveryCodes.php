@@ -9,10 +9,12 @@ use MediaWiki\Extension\OATHAuth\HTMLForm\OATHAuthOOUIHTMLForm;
 use MediaWiki\Extension\OATHAuth\HTMLForm\RecoveryCodesRemoveTemporaryForm;
 use MediaWiki\Extension\OATHAuth\HTMLForm\RecoveryCodesStatusForm;
 use MediaWiki\Extension\OATHAuth\Key\RecoveryCodeKeys;
+use MediaWiki\Extension\OATHAuth\Notifications\Manager;
 use MediaWiki\Extension\OATHAuth\OATHAuthModuleRegistry;
 use MediaWiki\Extension\OATHAuth\OATHAuthServices;
 use MediaWiki\Extension\OATHAuth\OATHUser;
 use MediaWiki\Extension\OATHAuth\OATHUserRepository;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use UnexpectedValueException;
 
@@ -25,6 +27,9 @@ class RecoveryCodes implements IModule {
 	 * Number of recovery code module instances allowed per user in oathauth_devices
 	 */
 	public const RECOVERY_CODE_MODULE_COUNT = 1;
+
+	/** Threshold number of recovery codes to trigger notification */
+	private const RECOVERY_CODE_LEFT = 2;
 
 	public function __construct( private readonly OATHUserRepository $userRepository ) {
 	}
@@ -76,6 +81,14 @@ class RecoveryCodes implements IModule {
 
 		// Remove the key that was used
 		$recoveryCodeKey->removeRecoveryCode( $user, $data['recoverycode'] );
+
+		if ( count( $recoveryCodeKey->getRecoveryCodes() ) <= self::RECOVERY_CODE_LEFT ) {
+			Manager::notifyRecoveryTokensRemaining(
+				$user,
+				count( $recoveryCodeKey->getRecoveryCodes() ),
+				MediaWikiServices::getInstance()->getMainConfig()->get( 'OATHRecoveryCodesCount' )
+			);
+		}
 
 		// Save the key removal to the database
 		$this->userRepository->updateKey( $user, $recoveryCodeKey );
