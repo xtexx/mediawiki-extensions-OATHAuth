@@ -40,6 +40,7 @@ class VerifyOATHForUserTest extends SpecialPageTestBase {
 		return new VerifyOATHForUser(
 			OATHAuthServices::getInstance( $this->getServiceContainer() )->getUserRepository(),
 			$this->getServiceContainer()->getUserFactory(),
+			$this->getServiceContainer()->getCentralIdLookup(),
 			$this->mockExtensionRegistry ?? $this->getServiceContainer()->getExtensionRegistry()
 		);
 	}
