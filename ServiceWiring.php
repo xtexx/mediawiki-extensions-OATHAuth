@@ -3,6 +3,7 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\OATHAuth\Enforce2FA\Mandatory2FAChecker;
+use MediaWiki\Extension\OATHAuth\ExpiringRecoveryCodeGenerator;
 use MediaWiki\Extension\OATHAuth\Key\EncryptionHelper;
 use MediaWiki\Extension\OATHAuth\Module\RecoveryCodes;
 use MediaWiki\Extension\OATHAuth\Module\WebAuthn;
@@ -23,6 +24,21 @@ return [
 				EncryptionHelper::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig(),
 			),
+		);
+	},
+	'OATHAuth.ExpiringRecoveryCodeGenerator' => static function (
+		MediaWikiServices $services
+	): ExpiringRecoveryCodeGenerator {
+		return new ExpiringRecoveryCodeGenerator(
+			$services->getCentralIdLookup(),
+			$services->getMainConfig(),
+			$services->getEmailer(),
+			$services->getExtensionRegistry(),
+			$services->getService( 'OATHAuth.Logger' ),
+			$services->getService( 'OATHAuth.ModuleRegistry' ),
+			$services->getService( 'OATHAuth.UserRepository' ),
+			$services->getUserFactory(),
+			$services->getUserOptionsLookup(),
 		);
 	},
 	'OATHAuth.Logger' => static function ( MediaWikiServices $services ): OATHAuthLogger {

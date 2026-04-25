@@ -405,15 +405,9 @@
 		"Recover2FAForUser": {
 			"class": "\\MediaWiki\\Extension\\OATHAuth\\Special\\Recover2FAForUser",
 			"services": [
-				"OATHAuth.UserRepository",
-				"OATHAuth.ModuleRegistry",
-				"OATHAuth.Logger",
-				"UserFactory",
-				"CentralIdLookup",
+				"OATHAuth.ExpiringRecoveryCodeGenerator",
 				"LinkRenderer",
-				"ExtensionRegistry",
-				"Emailer",
-				"UserOptionsLookup"
+				"OATHAuth.UserRepository"
 			]
 		},
 		"VerifyOATHForUser": {

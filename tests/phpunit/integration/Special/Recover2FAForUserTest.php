@@ -26,7 +26,9 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * @group Database
+ * @covers \MediaWiki\Extension\OATHAuth\ExpiringRecoveryCodeGenerator
  * @covers \MediaWiki\Extension\OATHAuth\Special\Recover2FAForUser
+ * @covers \MediaWiki\Extension\OATHAuth\OATHAuthServices
  * @covers \MediaWiki\Extension\OATHAuth\OATHUser
  */
 class Recover2FAForUserTest extends SpecialPageTestBase {
@@ -46,15 +48,9 @@ class Recover2FAForUserTest extends SpecialPageTestBase {
 	protected function newSpecialPage(): Recover2FAForUser {
 		$oathServices = OATHAuthServices::getInstance( $this->getServiceContainer() );
 		return new Recover2FAForUser(
-			$oathServices->getUserRepository(),
-			$oathServices->getModuleRegistry(),
-			$oathServices->getLogger(),
-			$this->getServiceContainer()->getUserFactory(),
-			$this->getServiceContainer()->getCentralIdLookup(),
+			$oathServices->getExpiringRecoveryCodeGenerator(),
 			$this->getServiceContainer()->getLinkRenderer(),
-			$this->getServiceContainer()->getExtensionRegistry(),
-			$this->getServiceContainer()->getEmailer(),
-			$this->getServiceContainer()->getUserOptionsLookup(),
+			$oathServices->getUserRepository(),
 		);
 	}
 

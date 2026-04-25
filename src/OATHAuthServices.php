@@ -30,6 +30,10 @@ class OATHAuthServices {
 		return $this->services->getService( 'OATHAuth.EncryptionHelper' );
 	}
 
+	public function getExpiringRecoveryCodeGenerator(): ExpiringRecoveryCodeGenerator {
+		return $this->services->getService( 'OATHAuth.ExpiringRecoveryCodeGenerator' );
+	}
+
 	public function getLogger(): OATHAuthLogger {
 		return $this->services->getService( 'OATHAuth.Logger' );
 	}
