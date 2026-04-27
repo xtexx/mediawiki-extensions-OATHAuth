@@ -768,20 +768,6 @@ class OATHManage extends SpecialPage {
 	}
 
 	/**
-	 * Checks local groups to see what groups a user is in
-	 * If any of the local groups are required, then the user is privileged
-	 */
-	private function isPrivilegedUser(): bool {
-		$requiredGroups = $this->getConfig()->get( 'OATHRequiredForGroups' );
-		if ( count( $requiredGroups ) === 0 ) {
-			return false;
-		}
-		$userGroups = $this->userGroupManager->getUserGroups( $this->oathUser->getUser() );
-		$a = array_intersect( $userGroups, $requiredGroups );
-		return count( $a ) > 0;
-	}
-
-	/**
 	 * Show the delete key warning/confirmation form using HTMLForm.
 	 */
 	private function showDeleteWarning(): void {
@@ -820,9 +806,6 @@ class OATHManage extends SpecialPage {
 				'raw' => true,
 				'default' => Html::warningBox( $this->msg( 'oathauth-delete-warning-final' )->parse() ),
 			];
-			if ( $this->isPrivilegedUser() ) {
-				$warningDescription = $this->msg( 'oathauth-delete-warning-final-privileged-user' )->parse();
-			}
 		}
 
 		$formDescriptor['warning-description'] = [

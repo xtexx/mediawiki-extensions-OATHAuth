@@ -111,8 +111,6 @@
 		"GetPreferences": "main",
 		"LoadExtensionSchemaUpdates": "updater",
 		"ReadPrivateUserRequirementsCondition": "main",
-		"UserEffectiveGroups": "main",
-		"UserGetRights": "main",
 		"UserRequirementsCondition": "main",
 		"UnitTestsAfterDatabaseSetup": "test",
 		"UnitTestsBeforeDatabaseTeardown": "test"
@@ -125,8 +123,7 @@
 				"OATHAuth.ModuleRegistry",
 				"OATHAuth.Logger",
 				"PermissionManager",
-				"MainConfig",
-				"UserGroupManager"
+				"MainConfig"
 			]
 		},
 		"updater": {
@@ -157,10 +154,6 @@
 		"OATHAuthAccountPrefix": {
 			"value": false,
 			"description": "Prefix for user account shown during enrollment."
-		},
-		"OATHRequiredForGroups": {
-			"value": [],
-			"description": "DEPRECATED: List of user groups that must use two-factor authentication. See https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgRestrictedGroups#Requiring_2FA_for_a_user_group for an example of how to migrate this configuration."
 		},
 		"OATHSecretKey": {
 			"value": false,
