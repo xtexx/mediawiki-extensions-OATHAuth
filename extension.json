@@ -160,7 +160,7 @@
 		},
 		"OATHRequiredForGroups": {
 			"value": [],
-			"description": "List of user groups that must use two-factor authentication."
+			"description": "DEPRECATED: List of user groups that must use two-factor authentication. See https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:$wgRestrictedGroups#Requiring_2FA_for_a_user_group for an example of how to migrate this configuration."
 		},
 		"OATHSecretKey": {
 			"value": false,
