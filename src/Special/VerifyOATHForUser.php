@@ -10,6 +10,7 @@ use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
@@ -98,10 +99,7 @@ class VerifyOATHForUser extends FormSpecialPage {
 		];
 	}
 
-	/**
-	 * @param array $formData
-	 * @return array|true
-	 */
+	/** @inheritDoc */
 	public function onSubmit( array $formData ) {
 		$this->targetUser = $formData['user'];
 		$user = $this->userFactory->newFromName( $this->targetUser );
@@ -110,6 +108,11 @@ class VerifyOATHForUser extends FormSpecialPage {
 		if ( !$user || $this->centralIdLookup->centralIdFromName( $formData['user'] ) === 0 ) {
 			return [ 'oathauth-user-not-found' ];
 		}
+
+		if ( $this->getUser()->pingLimiter( 'verify-2fa' ) ) {
+			return Status::newFatal( 'oathauth-throttled' );
+		}
+
 		$oathUser = $this->userRepo->findByUser( $user );
 
 		$this->enabledStatus = $oathUser->isTwoFactorAuthEnabled();
