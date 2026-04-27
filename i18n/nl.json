@@ -88,6 +88,7 @@
 	"oathauth-user-not-does-not-have-oath-enabled": "De gebruiker heeft geen tweetrapsauthenticatie ingesteld, er is niets om uit te schakelen.",
 	"oathauth-recover-fail-no-2fa": "De gebruiker heeft geen tweetrapsauthenticatie ingesteld, er is niets om te herstellen.",
 	"oathauth-recover-fail-email-required": "De gebruiker heeft geen bevestigd e-mailadres gekoppeld aan hun account. Geef een e-mailadres op waarnaar het bericht verzonden kan worden.",
+	"oathauth-recover-fail-max-codes-reached": "De gebruiker heeft het maximale aantal herstelcodes al bereikt. Het is niet mogelijk om meer herstelcodes te maken.",
 	"oathauth-recover-email-title": "Extra {{PLURAL:$1|herstelcode|herstelcodes}} voor uw account",
 	"oathauth-recover-email-text": "{{GENDER:$1|Beste}} $1, \n\nEr {{PLURAL:$2|is een extra herstelcodes|zijn $2 extra herstelcodes}} evoor uw tweetrapsauthenticatie gemaakt op $5. U kunt deze {{PLURAL:$2|code|codes}} gebruiken om aan te melden bij uw account als u geen toegang meer heeft tot andere tweetrapsauthenticatiemethoden.\n\n$3\n\nDeze {{PLURAL:$2|code kan|codes kunnen}} slechts tot gebruikt worden tot $8. Stel een nieuwe tweetrapsauthenticatiemethode in voor die tijd om toegang tot uw account te behouden. Bewaar codes zoals deze op een veilige plaats zolang ze geldig zijn. \n\nAls u deze code(s) niet niet zelf heeft opgevraagd, kan iemand zich hebben voorgedaan als u om toegang te krijgen tot uw account. $4",
 	"oathauth-recover-email-text-please-contact": "Als dit het geval is, neem dan {{GENDER:$1|contact}} op met de sitebeheerder.",

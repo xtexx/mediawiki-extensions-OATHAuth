@@ -6,7 +6,7 @@
 	},
 	"oathauth-webauthn-module-label": "Alc'hwez surentez",
 	"oathauth-webauthn-javascript-required": "Ret eo gweredekaat JavaScript en ho merdeer evit implijout un alc'hwez surentez.",
-	"oathauth-webauthn-ui-login-prompt": "Pouezit war hoc'h alc'hwez surentez pe grit diouzh kemennoù ar merdeer.",
+	"oathauth-webauthn-ui-login-prompt": "Implijit hoc'h alc'hwez surentez pe grit diouzh kemennoù ho merdeer.",
 	"oathauth-webauthn-ui-add-key": "Ouzhpennañ alc'hwez",
 	"oathauth-webauthn-error-browser-unsupported": "Ne skor ket ar merdeer-mañ an alc'hwezioù surentez, pe n'eo ket hegerz evit al lec'hienn-mañ. Klaskit gant ur merdeer all mar plij. [https://www.mediawiki.org/wiki/Extension:WebAuthn#Browser_support Lenn muioc'h]",
 	"oathauth-webauthn-error-browser-unsupported-console": "Ne skor ket ar merdeer-mañ an alc'hwezioù surentez, pe n'eo ket hegerz evit al lec'hienn-mañ.",
