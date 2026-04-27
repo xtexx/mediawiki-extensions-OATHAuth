@@ -3,7 +3,7 @@
  * @license GPL-2.0-or-later
  */
 
-namespace MediaWiki\Extension\OATHAuth\Api\Module;
+namespace MediaWiki\Extension\OATHAuth\Api;
 
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;

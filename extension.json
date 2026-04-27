@@ -471,7 +471,7 @@
 	},
 	"APIModules": {
 		"webauthn": {
-			"class": "\\MediaWiki\\Extension\\OATHAuth\\Api\\Module\\ApiWebAuthn",
+			"class": "\\MediaWiki\\Extension\\OATHAuth\\Api\\ApiWebAuthn",
 			"services": [
 				"AuthManager",
 				"OATHAuth.ModuleRegistry",
