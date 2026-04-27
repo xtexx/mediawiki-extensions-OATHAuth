@@ -141,8 +141,7 @@
 	},
 	"MessagesDirs": {
 		"OATHAuth": [
-			"i18n",
-			"i18n/api"
+			"i18n"
 		],
 		"WebAuthn": [
 			"i18n/webauthn",
@@ -478,14 +477,6 @@
 				"OATHAuth.ModuleRegistry",
 				"OATHAuth.UserRepository",
 				"OATHAuth.WebAuthnAuthenticator"
-			]
-		}
-	},
-	"APIMetaModules": {
-		"oath": {
-			"class": "\\MediaWiki\\Extension\\OATHAuth\\Api\\Module\\ApiQueryOATH",
-			"services": [
-				"OATHAuth.UserRepository"
 			]
 		}
 	},
