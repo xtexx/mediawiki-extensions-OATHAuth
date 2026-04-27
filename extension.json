@@ -191,14 +191,16 @@
 			"description": "Allow passwordless login with passkeys"
 		},
 		"WebAuthnRelyingPartyName": {
-			"value": null
+			"value": null,
+			"description": "Configures relying party name. If not defined, this defaults to $wgSitename."
 		},
 		"WebAuthnRelyingPartyID": {
-			"value": null
+			"value": null,
+			"description": "Configures relying party ID. If not defined, this defaults to $wgServer."
 		},
 		"WebAuthnNewCredsDisabled": {
-			"description": "If true, new credentials cannot be added, see T354701",
-			"value": false
+			"value": false,
+			"description": "If true, new credentials cannot be added, see T354701"
 		}
 	},
 	"ResourceModules": {
