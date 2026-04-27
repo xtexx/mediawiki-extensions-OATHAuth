@@ -8,7 +8,6 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Message\Message;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -110,8 +109,7 @@ class DisableOATHForUser extends FormSpecialPage {
 		}
 
 		if ( $this->getUser()->pingLimiter( 'disableoath' ) ) {
-			// Arbitrary duration given here
-			return [ 'oathauth-throttled', Message::durationParam( 60 ) ];
+			return [ 'oathauth-throttled' ];
 		}
 
 		$oathUser = $this->userRepo->findByUser( $user );

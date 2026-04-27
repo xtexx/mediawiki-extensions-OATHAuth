@@ -60,8 +60,7 @@ class PasskeyPrimaryAuthenticationProvider extends AbstractPrimaryAuthentication
 		// Don't increase pingLimiter, just check for limit exceeded.
 		if ( $user->pingLimiter( 'badoath', 0 ) ) {
 			return AuthenticationResponse::newFail(
-				// Arbitrary duration given here
-				wfMessage( 'oathauth-throttled' )->durationParams( 60 )
+				wfMessage( 'oathauth-throttled' )
 			);
 		}
 

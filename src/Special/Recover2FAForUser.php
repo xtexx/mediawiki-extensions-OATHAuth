@@ -146,6 +146,17 @@ class Recover2FAForUser extends FormSpecialPage {
 		}
 		$this->targetUser = $user;
 
+		// This page requires the performer to submit twice if the target user has no email. We count such cases
+		// as two attempts for rate limiting. Otherwise, the special page could be gamed into either unlimited
+		// 2FA verificator for email-less users or unlimited 2FA recovery for email-less users.
+		// We could also use tokens for ensuring that resubmitting the page is counted once, but let's do it only
+		// if needed.
+		// Given that the page is normally not used frequently, we defer to the system administrator to set
+		// appropriate limits to account for that behavior.
+		if ( $this->getUser()->pingLimiter( 'recover-2fa' ) ) {
+			return Status::newFatal( 'oathauth-throttled' );
+		}
+
 		$oathUser = $this->userRepo->findByUser( $user );
 		if ( !$oathUser->isTwoFactorAuthEnabled() ) {
 			return Status::newFatal( 'oathauth-recover-fail-no-2fa' );
