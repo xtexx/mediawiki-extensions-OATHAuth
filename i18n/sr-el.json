@@ -85,6 +85,5 @@
 	"oathauth-notifications-recoverycodesleft-help": "Pomoć",
 	"oathauth-notifications-recoverycodesleft-primary": "Proverite svoja podešavanja dvofaktorske autentifikacije",
 	"oathauth-verify-enabled": "$1 je {{GENDER:$1|omogućio|omogućila}} dvofaktorsku autentifikaciju.",
-	"oathauth-verify-disabled": "$1 nije {{GENDER:$1|omogućio|omogućila}} dvofaktorsku autentifikaciju.",
-	"oathauth-prefs-disabledgroups": "Onemogući {{PLURAL:$1|grupu|grupe}}:"
+	"oathauth-verify-disabled": "$1 nije {{GENDER:$1|omogućio|omogućila}} dvofaktorsku autentifikaciju."
 }

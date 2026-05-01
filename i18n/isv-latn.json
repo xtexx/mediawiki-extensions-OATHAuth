@@ -94,8 +94,6 @@
 	"oathauth-notifications-recoverycodesleft-primary": "Prověrite svoje nastavjenja dvufaktornoj avtentifikacije",
 	"oathauth-verify-enabled": "{{GENDER:$1|$1}} imaje vključenu dvufaktornu avtentifikaciju.",
 	"oathauth-verify-disabled": "{{GENDER:$1|$1}} ne imaje vključenu dvufaktornu avtentifikaciju.",
-	"oathauth-prefs-disabledgroups": "Izključen{{PLURAL:$1|a grupa|e grupy}}:",
-	"oathauth-prefs-disabledgroups-help": "{{GENDER:$2|Vaše členstvo}} v {{PLURAL:$1|tutoj grupě|tutyh grupah}} jest unemožnjeno do momenta, že vključite [[Special:Manage Two-factor authentication|dvufaktornu avtentifikaciju]].",
 	"oathauth-qrcode-alt": "QR-kod s tajnym ključem za skanovanje.",
 	"oathauth-hint": "Ne imajete li dostup k svojemu aparatu ili aplikacije za avtentifikaciju? Možete vvesti kod za odnovjenje (podany, ako imajete vključenu dvufaktornu avtentifikaciju) v tuto polje.",
 	"oathauth-must-be-central": "Da byste mogli korstistati dvufaktornu avtentifikaciju, trěba, že {{GENDER:$1|Vaše konto}} jest slučeno s centralnoji sistemoju za avtentifikaciju."

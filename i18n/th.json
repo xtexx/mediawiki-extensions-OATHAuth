@@ -72,7 +72,6 @@
 	"oathauth-notifications-enable-primary": "ตรวจสอบการตั้งค่าการยืนยันตัวตนสองขั้นตอนของคุณ",
 	"oathauth-notifications-recoverycodesleft-help": "วิธีใช้",
 	"oathauth-notifications-recoverycodesleft-primary": "ตรวจสอบการตั้งค่าการยืนยันตัวตนสองขั้นตอนของคุณ",
-	"oathauth-prefs-disabledgroups": "ปิดใช้งาน {{PLURAL:$1|กลุ่ม}}:",
 	"oathauth-qrcode-alt": "คิวอาร์โค้ดที่สามารถสแกนได้ ซึ่งแสดงถึงรหัสลับ",
 	"oathauth-hint": "ไม่สามารถเข้าถึงอุปกรณ์หรือแอปพลิเคชันของคุณได้ใช่หรือไม่? คุณสามารถกรอกรหัสกู้คืน (ที่ได้รับเมื่อคุณเปิดใช้งานการยืนยันตัวตนสองขั้นตอน) ในช่องนี้ได้"
 }

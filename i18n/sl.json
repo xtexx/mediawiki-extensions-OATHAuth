@@ -116,8 +116,6 @@
 	"oathauth-notifications-recoverycodesleft-primary": "Preverite nastavitve dvofaktorske avtentikacije",
 	"oathauth-verify-enabled": "{{GENDER:$1|$1}} ima vklopljeno dvofaktorsko avtentikacijo.",
 	"oathauth-verify-disabled": "{{GENDER:$1|$1}} nima vklopljene dvofaktorske avtentikacije.",
-	"oathauth-prefs-disabledgroups": "{{PLURAL:$1|Onemogočena skupina|Onemogočeni skupini|Onemogočene skupine}}:",
-	"oathauth-prefs-disabledgroups-help": "{{GENDER:$2|Vaše članstvo}} v {{PLURAL:$1|tej skupini|teh skupinah}} je onemogočeno, dokler ne vklopite [[Special:Manage Two-factor authentication|dvofaktorske avtentikacije]].",
 	"oathauth-qrcode-alt": "Skenirna koda QR, ki predstavlja skrivni ključ.",
 	"oathauth-hint": "Nimate dostopa do svoje naprave ali aplikacije? V to polje lahko vnesete obnovitveno kodo (prikazano, ko ste omogočili 2FA).",
 	"oathauth-recovery-code-hint": "Ste izgubili obnovitveno kodo? Kontaktirajte [[{{MediaWiki:Grouppage-sysop}}|administratorja]].",

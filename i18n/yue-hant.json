@@ -98,7 +98,6 @@
 	"oathauth-delete-warning-header": "剷走$1",
 	"oathauth-delete-confirm-box": "輸入\"{{int:oathauth-authenticator-delete-text}}\"嚟繼續",
 	"oathauth-delete-warning-final": "移除呢個方式會完全停用兩步驗證。\n\n同時會刪除晒所有恢復代碼同通行金鑰。\n\n<strong>咁做會令你嘅帳戶安全性降低。</strong>",
-	"oathauth-delete-warning-final-privileged-user": "你喺 {{SITENAME}} 有需要兩步驗證嘅權限。\n<strong>你可能會失去呢啲權限，要再手動申請。</strong>\n\n提示：喺移除之前加咗一個新方式先。",
 	"oathauth-delete-wrong-confirm-message": "最後移除金鑰輸入錯誤。請輸入「{{int:oathauth-authenticator-delete-text}}」嚟繼續",
 	"oathauth-delete-success": "<strong>$1</strong>剷走咗。",
 	"oathauth-created-at": "喺$1加入",

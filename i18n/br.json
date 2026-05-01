@@ -109,7 +109,6 @@
 	"oathauth-notifications-recoverycodesleft-primary": "Gwiriit ho arventennoù dilesañ div-elfenn",
 	"oathauth-notifications-recoverycodes-generated-for-user-help": "Skoazell",
 	"oathauth-notifications-recoverycodes-generated-for-user-contact": "Kit e darempred gant merour al lec'hienn",
-	"oathauth-prefs-disabledgroups": "{{PLURAL:$1|Strollad|Strolladoù}} diweredekaet ː",
 	"oathauth-hint": "Ne c’hallit ket ober gant hoc’h ardivink pe arload dilesañ? Gallout a rit ober gant ur c’hod adsevel (diskouezet pa hoc'h eus gweredekaet an dilesadur div-elfenn) er vaezienn-mañ.",
 	"oathauth-recovery-code-hint": "Ha kollet hoc'h eus ho kod adsevel ? Kit e darempred gant ur [[{{MediaWiki:Grouppage-sysop}}|merour]].",
 	"oathauth-remove-nosuchkey": "N'eo ket bet kavet an alc'hwez.",
