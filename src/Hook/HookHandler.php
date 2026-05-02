@@ -194,7 +194,7 @@ class HookHandler implements
 			'raw' => true,
 			'default' => (string)$control,
 			'label-message' => 'oathauth-prefs-label',
-			'section' => 'personal/info',
+			'section' => 'personal/accountsecurity',
 		];
 
 		return true;
