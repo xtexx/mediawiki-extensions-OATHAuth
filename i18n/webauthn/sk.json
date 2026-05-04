@@ -4,5 +4,27 @@
 			"Luky001"
 		]
 	},
-	"oathauth-webauthn-add-security-key": "Pridať bezpečnostný kľúč (security key)"
+	"oathauth-webauthn-module-label": "Bezpečnostný kľúč",
+	"oathauth-webauthn-javascript-required": "Na použitie bezpečnostného kľúča musí byť vo vašom prehliadači povolený JavaScript.",
+	"oathauth-webauthn-ui-login-prompt": "Použite svoj bezpečnostný kľúč alebo postupujte podľa pokynov prehliadača.",
+	"oathauth-webauthn-ui-add-key": "Pridať kľúč",
+	"oathauth-webauthn-error-auth-generic": "Overovací proces bol prerušený. Spustite ho, prosím, znovu.",
+	"oathauth-webauthn-error-reg-generic": "Váš kľúč sa nepodarilo overiť. Začnite tento proces znovu, prosím.",
+	"oathauth-webauthn-registered-keys-section-name": "Registrované kľúče",
+	"oathauth-webauthn-ui-remove-key": "Odstrániť",
+	"oathauth-webauthn-error-verification-failed": "Overenie WebAuthn zlyhalo.",
+	"oathauth-webauthn-error-passkey-verification-failed": "Verifikácia cez prístupový kľúč zlyhala.",
+	"oathauth-webauthn-error-credentials-missing": "Údaje WebAuthn neboli odoslané.",
+	"oathauth-webauthn-error-invalid-new-key": "Nový kľúč vrátený modulom nie je požadovaného typu.",
+	"oathauth-webauthn-error-registration-failed": "Registrácia nového kľúča zlyhala.",
+	"oathauth-webauthn-ui-key-register-help": "Vyberte si prezývku pre svoj kľúč:",
+	"oathauth-webauthn-error-cannot-remove-key": "Kľúč nie je možné odstrániť.",
+	"oathauth-webauthn-error-get-authinfo-fail": "Autentifikačné informácie sa nepodarilo načítať.",
+	"oathauth-webauthn-add-key-section-name": "Pridať nový bezpečnostný kľúč",
+	"oathauth-webauthn-error-get-reginfo-fail": "Registračné informácie sa nepodarilo načítať.",
+	"oathauth-webauthn-ui-reload-page-label": "Znovu načítať stránku",
+	"oathauth-webauthn-authentication-info-label": "Autentifikačné údaje",
+	"oathauth-webauthn-credential-label": "Osobné údaje používateľa",
+	"oathauth-webauthn-add-security-key": "Pridať bezpečnostný kľúč (security key)",
+	"oathauth-webauthn-auth-switch-module-label-passkey": "Použiť bezpečnostný kľúč alebo prístupový kľúč"
 }
